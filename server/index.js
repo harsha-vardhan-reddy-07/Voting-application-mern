@@ -321,7 +321,7 @@ mongoose.connect('mongodb://localhost:27017/Voting', {}
     app.delete('/reject-contestant/:id', async (req, res) =>{
         try{
             await Contestant.deleteOne({_id: req.params.id});
-            res.status(200).json(updatedContestant);
+            res.status(200).json({msg: "APPLICATION REJECTED!!"});
         }catch(err){
             res.status(500).json({error: err.message});
         }
